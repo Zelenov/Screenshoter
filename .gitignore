@@ -1,0 +1,15 @@
+__history
+*.~dsk
+*.dsk
+*.identcache
+*.local
+*.tvsconfig
+*.dcu
+*.fbl7
+*.fbl7
+*.fbpInf
+*.tmp
+*.tmp
+*.psd
+/bin
+/Setup

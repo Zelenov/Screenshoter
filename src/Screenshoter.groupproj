@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{4EED24C5-FE1F-42F6-A01C-4B236E06F08C}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Screenshoter_hook.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Screenshoter.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Screenshoter_hook">
+        <MSBuild Projects="Screenshoter_hook.dproj"/>
+    </Target>
+    <Target Name="Screenshoter_hook:Clean">
+        <MSBuild Projects="Screenshoter_hook.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Screenshoter_hook:Make">
+        <MSBuild Projects="Screenshoter_hook.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Screenshoter">
+        <MSBuild Projects="Screenshoter.dproj"/>
+    </Target>
+    <Target Name="Screenshoter:Clean">
+        <MSBuild Projects="Screenshoter.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Screenshoter:Make">
+        <MSBuild Projects="Screenshoter.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Screenshoter_hook;Screenshoter"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Screenshoter_hook:Clean;Screenshoter:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Screenshoter_hook:Make;Screenshoter:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

@@ -1,0 +1,5 @@
+1 FONT "Res\\PTM75F.ttf"
+2 FONT "Res\\PTS55F.ttf"
+3 FONT "Res\\CaesarDressing-Regular.ttf"
+GLOW BITMAP "Res\\glow.bmp"
+CLICK WAVE "Res\\click.wav"
